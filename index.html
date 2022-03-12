@@ -30,6 +30,7 @@
     <script>
         const loadDefaultSite = () =>{
             generateAppendString('');
+
         }
         const getUserName = () => {
             const url = window.location.href.split('?q=');
@@ -43,7 +44,7 @@
         const generateAppendString = (user) => {
             setTimeout(() => {
                 document.querySelector('#thatLine').textContent = `Ab to sach bol de, ${user} bsdk!`
-            }, 1000);
+            }, 2000);
         }
         getUserName();
     </script>
