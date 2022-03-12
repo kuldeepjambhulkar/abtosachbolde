@@ -22,23 +22,29 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 m-auto mt-5">
-                <img src="./assets/main-image.png" alt="" class="img-fluid">
+                <img id="thatImage" src="./assets/main-image.png" alt="" class="img-fluid">
                 <p id="thatLine" class=" text-center custome-yellow-stroke"></p>
             </div>
         </div>
     </div>
     <script>
+        const loadDefaultSite = () =>{
+            generateAppendString('');
+        }
         const getUserName = () => {
             const url = window.location.href.split('?q=');
             if(url.length > 1){
                 const user = url[url.length - 1];
                 generateAppendString(user);
             }else{
-                generateAppendString('');
+                loadDefaultSite()
             }
         }
         const generateAppendString = (user) => {
-            document.querySelector('#thatLine').textContent = `Ab to sach bol de, ${user} BSDK!`
+            var isLoaded = document.querySelector('#thatImage').complete && document.querySelector('#thatImage').naturalHeight !== 0;
+            if(isLoaded){
+                document.querySelector('#thatLine').textContent = `Ab to sach bol de, ${user} bsdk!`
+            }
         }
         getUserName();
     </script>
