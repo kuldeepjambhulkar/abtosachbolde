@@ -30,8 +30,12 @@
     <script>
         const getUserName = () => {
             const url = window.location.href.split('?q=');
-            const user = url[url.length - 1];
-            generateAppendString(user);
+            if(url.length > 1){
+                const user = url[url.length - 1];
+                generateAppendString(user);
+            }else{
+                generateAppendString('');
+            }
         }
         const generateAppendString = (user) => {
             document.querySelector('#thatLine').textContent = `Ab to sach bol de, ${user} BSDK!`
