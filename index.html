@@ -29,7 +29,7 @@
     </div>
     <script>
         const getUserName = () => {
-            const url = window.location.href.split('/');
+            const url = window.location.href.split('?q=');
             const user = url[url.length - 1];
             generateAppendString(user);
         }
