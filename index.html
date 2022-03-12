@@ -42,6 +42,7 @@
         }
         const generateAppendString = (user) => {
             var isLoaded = document.querySelector('#thatImage').complete && document.querySelector('#thatImage').naturalHeight !== 0;
+            console.log(isLoaded);
             if(isLoaded){
                 document.querySelector('#thatLine').textContent = `Ab to sach bol de, ${user} bsdk!`
             }
